@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -86,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 in.close();
                 out.close();
                 System.out.println("File copied.");
+                Toast.makeText(getApplicationContext(),"Copied Apk "+(i+1),Toast.LENGTH_SHORT).show();
             }
             catch(FileNotFoundException ex){
                 System.out.println(ex.getMessage() + " in the specified directory.");
